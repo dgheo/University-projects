@@ -1,0 +1,2 @@
+vlan routere 1  583
+vlan routere 2	497

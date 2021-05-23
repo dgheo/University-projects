@@ -1,0 +1,28 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/gelud/Desktop/CN FNAL/tema2/project_2/project_2.srcs/sources_1/new/H2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module H2
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/gelud/Desktop/CN FNAL/tema2/project_2/project_2.srcs/sources_1/new/X74_194.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module X74_194
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/gelud/Desktop/CN FNAL/tema2/project_2/project_2.srcs/sources_1/new/OR2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module OR2
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/gelud/Desktop/CN FNAL/tema2/project_2/project_2.srcs/sources_1/new/INV.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module INV
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/gelud/Desktop/CN FNAL/tema2/project_2/project_2.srcs/sources_1/new/H1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module H1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/gelud/Desktop/CN FNAL/tema2/project_2/project_2.srcs/sources_1/new/FDRSE.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module FDRSE
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/gelud/Desktop/CN FNAL/tema2/project_2/project_2.srcs/sources_1/new/FDCE.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module FDCE
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/gelud/Desktop/CN FNAL/tema2/project_2/project_2.srcs/sources_1/new/CB4CLE.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CB4CLE
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/gelud/Desktop/CN FNAL/tema2/project_2/project_2.srcs/sources_1/new/AND4.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AND4
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/gelud/Desktop/CN FNAL/tema2/project_2/project_2.srcs/sources_1/new/AND2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AND2
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/gelud/Desktop/CN FNAL/tema2/project_2/project_2.srcs/sources_1/new/TOP.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TOP
+INFO: [VRFC 10-2458] undeclared symbol txrdyOut, assumed default net type wire [C:/Users/gelud/Desktop/CN FNAL/tema2/project_2/project_2.srcs/sources_1/new/TOP.v:40]
+INFO: [VRFC 10-2458] undeclared symbol InvOut1, assumed default net type wire [C:/Users/gelud/Desktop/CN FNAL/tema2/project_2/project_2.srcs/sources_1/new/TOP.v:47]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/gelud/Desktop/CN FNAL/tema2/project_2/project_2.srcs/sim_1/new/Simulation_TOP.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Simulation_TOP
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/gelud/Desktop/CN FNAL/tema2/project_2/project_2.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl

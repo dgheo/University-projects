@@ -1,0 +1,454 @@
+#-----------------------------------------------------------
+# Vivado v2016.2 (64-bit)
+# SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
+# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+# Start of session at: Tue Jan 16 07:13:18 2018
+# Process ID: 6596
+# Current directory: C:/Users/Florin/Desktop/CN2/tema3/project_1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent10276 C:\Users\Florin\Desktop\CN2\tema3\project_1\project_1.xpr
+# Log file: C:/Users/Florin/Desktop/CN2/tema3/project_1/vivado.log
+# Journal file: C:/Users/Florin/Desktop/CN2/tema3/project_1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Florin/Desktop/CN2/tema3/project_1/project_1.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2016.2/data/ip'.
+open_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:21 . Memory (MB): peak = 729.324 ; gain = 114.016
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "C:/Users/Florin/Desktop/CN2/tema3/project_1/project_1.srcs/sources_1/new/max16b.v" into library work [C:/Users/Florin/Desktop/CN2/tema3/project_1/project_1.srcs/sources_1/new/max16b.v:1]
+[Tue Jan 16 07:16:42 2018] Launched synth_1...
+Run output will be captured here: C:/Users/Florin/Desktop/CN2/tema3/project_1/project_1.runs/synth_1/runme.log
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'tb_max16b' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Florin/Desktop/CN2/tema3/project_1/project_1.sim/sim_1/behav'
+"xvlog -m64 --relax -prj tb_max16b_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Florin/Desktop/CN2/tema3/project_1/project_1.srcs/sources_1/new/max16b.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module max16b
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Florin/Desktop/CN2/tema3/project_1/project_1.srcs/sim_1/new/sim_max16b.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_max16b
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Florin/Desktop/CN2/tema3/project_1/project_1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Florin/Desktop/CN2/tema3/project_1/project_1.sim/sim_1/behav'
+Vivado Simulator 2016.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2016.2/bin/unwrapped/win64.o/xelab.exe -wto 852560053cd3480288e4c17faa0f9643 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_max16b_behav xil_defaultlib.tb_max16b xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.max16b
+Compiling module xil_defaultlib.tb_max16b
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_max16b_behav
+
+****** Webtalk v2016.2 (64-bit)
+  **** SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
+  **** IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/Florin/Desktop/CN2/tema3/project_1/project_1.sim/sim_1/behav/xsim.dir/tb_max16b_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Tue Jan 16 07:19:59 2018...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 737.848 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '9' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Florin/Desktop/CN2/tema3/project_1/project_1.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_max16b_behav -key {Behavioral:sim_1:Functional:tb_max16b} -tclbatch {tb_max16b.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.2
+Time resolution is 1 ps
+source tb_max16b.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+          1(              150000): fail, a:  -250, b:   -43, c:    10, y(actual):     1, y(asteptat):         10
+
+          2(              200000): fail, a:    60, b:    90, c:    60, y(actual):     0, y(asteptat):         90
+
+          3(              250000): fail, a:   -10, b:    22, c:   -20, y(actual):     0, y(asteptat):         22
+
+          4(              300000): fail, a:  -101, b:   -22, c:  -531, y(actual):     0, y(asteptat):        -22
+
+          5(              350000): fail, a:     1, b:    55, c:     2, y(actual):     1, y(asteptat):         55
+
+          6(              400000): fail, a:     1, b:     4, c:     2, y(actual):     0, y(asteptat):          4
+
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_max16b_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:17 . Memory (MB): peak = 740.785 ; gain = 2.938
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'tb_max16b' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Florin/Desktop/CN2/tema3/project_1/project_1.sim/sim_1/behav'
+"xvlog -m64 --relax -prj tb_max16b_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Florin/Desktop/CN2/tema3/project_1/project_1.srcs/sources_1/new/max16b.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module max16b
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Florin/Desktop/CN2/tema3/project_1/project_1.srcs/sim_1/new/sim_max16b.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_max16b
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Florin/Desktop/CN2/tema3/project_1/project_1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Florin/Desktop/CN2/tema3/project_1/project_1.sim/sim_1/behav'
+Vivado Simulator 2016.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2016.2/bin/unwrapped/win64.o/xelab.exe -wto 852560053cd3480288e4c17faa0f9643 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_max16b_behav xil_defaultlib.tb_max16b xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.max16b
+Compiling module xil_defaultlib.tb_max16b
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_max16b_behav
+
+****** Webtalk v2016.2 (64-bit)
+  **** SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
+  **** IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/Florin/Desktop/CN2/tema3/project_1/project_1.sim/sim_1/behav/xsim.dir/tb_max16b_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Tue Jan 16 07:21:46 2018...
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Florin/Desktop/CN2/tema3/project_1/project_1.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_max16b_behav -key {Behavioral:sim_1:Functional:tb_max16b} -tclbatch {tb_max16b.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.2
+Time resolution is 1 ps
+source tb_max16b.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+          1(              150000): fail, a:  -250, b:   -43, c:    10, y(actual):     1, y(asteptat):         10
+
+          2(              200000): fail, a:    60, b:    90, c:    60, y(actual):     0, y(asteptat):         90
+
+          3(              250000): fail, a:   -10, b:    22, c:   -20, y(actual):     0, y(asteptat):         22
+
+          4(              300000): fail, a:  -101, b:   -22, c:  -531, y(actual):     0, y(asteptat):        -22
+
+          5(              350000): fail, a:     1, b:    55, c:     2, y(actual):     1, y(asteptat):         55
+
+          6(              400000): fail, a:     1, b:     4, c:     2, y(actual):     0, y(asteptat):          4
+
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_max16b_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 10 us
+          1(              150000): fail, a:  -250, b:   -43, c:    10, y(actual):     1, y(asteptat):         10
+
+          2(              200000): fail, a:    60, b:    90, c:    60, y(actual):     0, y(asteptat):         90
+
+          3(              250000): fail, a:   -10, b:    22, c:   -20, y(actual):     0, y(asteptat):         22
+
+          4(              300000): fail, a:  -101, b:   -22, c:  -531, y(actual):     0, y(asteptat):        -22
+
+          5(              350000): fail, a:     1, b:    55, c:     2, y(actual):     1, y(asteptat):         55
+
+          6(              400000): fail, a:     1, b:     4, c:     2, y(actual):     0, y(asteptat):          4
+
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'tb_max16b' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Florin/Desktop/CN2/tema3/project_1/project_1.sim/sim_1/behav'
+"xvlog -m64 --relax -prj tb_max16b_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Florin/Desktop/CN2/tema3/project_1/project_1.srcs/sources_1/new/max16b.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module max16b
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Florin/Desktop/CN2/tema3/project_1/project_1.srcs/sim_1/new/sim_max16b.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_max16b
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Florin/Desktop/CN2/tema3/project_1/project_1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Florin/Desktop/CN2/tema3/project_1/project_1.sim/sim_1/behav'
+Vivado Simulator 2016.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2016.2/bin/unwrapped/win64.o/xelab.exe -wto 852560053cd3480288e4c17faa0f9643 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_max16b_behav xil_defaultlib.tb_max16b xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.max16b
+Compiling module xil_defaultlib.tb_max16b
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_max16b_behav
+
+****** Webtalk v2016.2 (64-bit)
+  **** SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
+  **** IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/Florin/Desktop/CN2/tema3/project_1/project_1.sim/sim_1/behav/xsim.dir/tb_max16b_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Tue Jan 16 07:26:12 2018...
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Florin/Desktop/CN2/tema3/project_1/project_1.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_max16b_behav -key {Behavioral:sim_1:Functional:tb_max16b} -tclbatch {tb_max16b.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.2
+Time resolution is 1 ps
+source tb_max16b.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+          1(              150000): pass, a:  -250, b:   -43, c:    10, y:    10
+
+          2(              200000): fail, a:    60, b:    90, c:    60, y(actual):    60, y(asteptat):         90
+
+          3(              250000): pass, a:   -10, b:    22, c:   -20, y:    22
+
+          4(              300000): fail, a:  -101, b:   -22, c:  -531, y(actual):  -531, y(asteptat):        -22
+
+          5(              350000): fail, a:     1, b:    55, c:     2, y(actual):     2, y(asteptat):         55
+
+          6(              400000): fail, a:     1, b:     4, c:     2, y(actual):     2, y(asteptat):          4
+
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_max16b_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run all
+          1(              150000): pass, a:  -250, b:   -43, c:    10, y:    10
+
+          2(              200000): fail, a:    60, b:    90, c:    60, y(actual):    60, y(asteptat):         90
+
+          3(              250000): pass, a:   -10, b:    22, c:   -20, y:    22
+
+          4(              300000): fail, a:  -101, b:   -22, c:  -531, y(actual):  -531, y(asteptat):        -22
+
+          5(              350000): fail, a:     1, b:    55, c:     2, y(actual):     2, y(asteptat):         55
+
+          6(              400000): fail, a:     1, b:     4, c:     2, y(actual):     2, y(asteptat):          4
+
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 10 us
+          1(              150000): pass, a:  -250, b:   -43, c:    10, y:    10
+
+          2(              200000): fail, a:    60, b:    90, c:    60, y(actual):    60, y(asteptat):         90
+
+          3(              250000): pass, a:   -10, b:    22, c:   -20, y:    22
+
+          4(              300000): fail, a:  -101, b:   -22, c:  -531, y(actual):  -531, y(asteptat):        -22
+
+          5(              350000): fail, a:     1, b:    55, c:     2, y(actual):     2, y(asteptat):         55
+
+          6(              400000): fail, a:     1, b:     4, c:     2, y(actual):     2, y(asteptat):          4
+
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'tb_max16b' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Florin/Desktop/CN2/tema3/project_1/project_1.sim/sim_1/behav'
+"xvlog -m64 --relax -prj tb_max16b_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Florin/Desktop/CN2/tema3/project_1/project_1.srcs/sources_1/new/max16b.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module max16b
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Florin/Desktop/CN2/tema3/project_1/project_1.srcs/sim_1/new/sim_max16b.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_max16b
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Florin/Desktop/CN2/tema3/project_1/project_1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Florin/Desktop/CN2/tema3/project_1/project_1.sim/sim_1/behav'
+Vivado Simulator 2016.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2016.2/bin/unwrapped/win64.o/xelab.exe -wto 852560053cd3480288e4c17faa0f9643 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_max16b_behav xil_defaultlib.tb_max16b xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.max16b
+Compiling module xil_defaultlib.tb_max16b
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_max16b_behav
+
+****** Webtalk v2016.2 (64-bit)
+  **** SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
+  **** IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/Florin/Desktop/CN2/tema3/project_1/project_1.sim/sim_1/behav/xsim.dir/tb_max16b_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Tue Jan 16 07:32:06 2018...
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Florin/Desktop/CN2/tema3/project_1/project_1.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_max16b_behav -key {Behavioral:sim_1:Functional:tb_max16b} -tclbatch {tb_max16b.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.2
+Time resolution is 1 ps
+source tb_max16b.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+          1(              150000): fail, a:  -250, b:   -43, c:    10, y(actual):   -43, y(asteptat):         10
+
+          2(              200000): fail, a:    60, b:    90, c:    60, y(actual):    60, y(asteptat):         90
+
+          3(              250000): fail, a:   -10, b:    22, c:   -20, y(actual):   -20, y(asteptat):         22
+
+          4(              300000): fail, a:  -101, b:   -22, c:  -531, y(actual):  -531, y(asteptat):        -22
+
+          5(              350000): fail, a:     1, b:    55, c:     2, y(actual):     2, y(asteptat):         55
+
+          6(              400000): fail, a:     1, b:     4, c:     2, y(actual):     2, y(asteptat):          4
+
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_max16b_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 10 us
+          1(              150000): fail, a:  -250, b:   -43, c:    10, y(actual):   -43, y(asteptat):         10
+
+          2(              200000): fail, a:    60, b:    90, c:    60, y(actual):    60, y(asteptat):         90
+
+          3(              250000): fail, a:   -10, b:    22, c:   -20, y(actual):   -20, y(asteptat):         22
+
+          4(              300000): fail, a:  -101, b:   -22, c:  -531, y(actual):  -531, y(asteptat):        -22
+
+          5(              350000): fail, a:     1, b:    55, c:     2, y(actual):     2, y(asteptat):         55
+
+          6(              400000): fail, a:     1, b:     4, c:     2, y(actual):     2, y(asteptat):          4
+
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'tb_max16b' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Florin/Desktop/CN2/tema3/project_1/project_1.sim/sim_1/behav'
+"xvlog -m64 --relax -prj tb_max16b_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Florin/Desktop/CN2/tema3/project_1/project_1.srcs/sources_1/new/max16b.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module max16b
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Florin/Desktop/CN2/tema3/project_1/project_1.srcs/sim_1/new/sim_max16b.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_max16b
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Florin/Desktop/CN2/tema3/project_1/project_1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Florin/Desktop/CN2/tema3/project_1/project_1.sim/sim_1/behav'
+Vivado Simulator 2016.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2016.2/bin/unwrapped/win64.o/xelab.exe -wto 852560053cd3480288e4c17faa0f9643 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_max16b_behav xil_defaultlib.tb_max16b xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.max16b
+Compiling module xil_defaultlib.tb_max16b
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_max16b_behav
+
+****** Webtalk v2016.2 (64-bit)
+  **** SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
+  **** IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/Florin/Desktop/CN2/tema3/project_1/project_1.sim/sim_1/behav/xsim.dir/tb_max16b_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Tue Jan 16 07:34:52 2018...
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Florin/Desktop/CN2/tema3/project_1/project_1.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_max16b_behav -key {Behavioral:sim_1:Functional:tb_max16b} -tclbatch {tb_max16b.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.2
+Time resolution is 1 ps
+source tb_max16b.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+          1(              150000): pass, a:  -250, b:   -43, c:    10, y:    10
+
+          2(              200000): pass, a:    60, b:    90, c:    60, y:    90
+
+          3(              250000): pass, a:   -10, b:    22, c:   -20, y:    22
+
+          4(              300000): pass, a:  -101, b:   -22, c:  -531, y:   -22
+
+          5(              350000): pass, a:     1, b:    55, c:     2, y:    55
+
+          6(              400000): pass, a:     1, b:     4, c:     2, y:     4
+
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_max16b_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Jan 16 07:35:50 2018...

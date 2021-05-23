@@ -1,0 +1,17 @@
+#-----------------------------------------------------------
+# Vivado v2016.2 (64-bit)
+# SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
+# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+# Start of session at: Tue Jan 16 15:23:46 2018
+# Process ID: 11028
+# Current directory: C:/Users/gelud/Desktop/CN FNAL/tema5/project_ideea_Cn
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent1244 C:\Users\gelud\Desktop\CN FNAL\tema5\project_ideea_Cn\project_ideea_Cn.xpr
+# Log file: C:/Users/gelud/Desktop/CN FNAL/tema5/project_ideea_Cn/vivado.log
+# Journal file: C:/Users/gelud/Desktop/CN FNAL/tema5/project_ideea_Cn\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {C:/Users/gelud/Desktop/CN FNAL/tema5/project_ideea_Cn/project_ideea_Cn.xpr}
+update_compile_order -fileset sources_1
+launch_simulation
+source test.tcl
+close_sim

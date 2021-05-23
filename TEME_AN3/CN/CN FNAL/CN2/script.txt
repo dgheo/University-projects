@@ -1,0 +1,5 @@
+set PROJECT_NAME "lab1"
+set TOPLEVEL_NAME "design1"
+ 
+write_hwdef -force -file F:/Anul\ 3\ laboratore\ si\ cursuri/CN2/lab1/lab1.runs/$TOPLEVEL_NAME.hwdef
+write_sysdef -force -hwdef F:/Anul\ 3\ laboratore\ si\ cursuri/CN2/lab1/lab1.runs/synth_1/$TOPLEVEL_NAME.hwdef -bitfile F:/Anul\ 3\ laboratore\ si\ cursuri/CN2/lab1/lab1.runs/impl_1/$TOPLEVEL_NAME.bit

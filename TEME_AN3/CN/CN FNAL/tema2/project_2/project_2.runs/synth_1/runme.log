@@ -1,0 +1,40 @@
+
+*** Running vivado
+    with args -log TOP.vds -m64 -mode batch -messageDb vivado.pb -notrace -source TOP.tcl
+
+
+****** Vivado v2016.2 (64-bit)
+  **** SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
+  **** IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source TOP.tcl -notrace
+Command: synth_design -top TOP -part xc7k70tfbv676-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7k70t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k70t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 2456 
+CRITICAL WARNING: [Synth 8-2490] overwriting previous definition of module OR2 [C:/Users/Florin/Desktop/CN2/tema2/project_2/project_2.srcs/sources_1/new/OR2.v:23]
+CRITICAL WARNING: [Synth 8-2490] overwriting previous definition of module INV [C:/Users/Florin/Desktop/CN2/tema2/project_2/project_2.srcs/sources_1/new/INV.v:23]
+CRITICAL WARNING: [Synth 8-2490] overwriting previous definition of module FDRSE [C:/Users/Florin/Desktop/CN2/tema2/project_2/project_2.srcs/sources_1/new/FDRSE.v:23]
+CRITICAL WARNING: [Synth 8-2490] overwriting previous definition of module FDCE [C:/Users/Florin/Desktop/CN2/tema2/project_2/project_2.srcs/sources_1/new/FDCE.v:23]
+CRITICAL WARNING: [Synth 8-2490] overwriting previous definition of module AND4 [C:/Users/Florin/Desktop/CN2/tema2/project_2/project_2.srcs/sources_1/new/AND4.v:23]
+CRITICAL WARNING: [Synth 8-2490] overwriting previous definition of module AND2 [C:/Users/Florin/Desktop/CN2/tema2/project_2/project_2.srcs/sources_1/new/AND2.v:23]
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:13 . Memory (MB): peak = 283.582 ; gain = 76.199
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'TOP' [C:/Users/Florin/Desktop/CN2/tema2/project_2/project_2.srcs/sources_1/new/TOP.v:23]
+INFO: [Synth 8-638] synthesizing module 'H2' [C:/Users/Florin/Desktop/CN2/tema2/project_2/project_2.srcs/sources_1/new/H2.v:23]
+ERROR: [Synth 8-434] mixed level sensitive and edge triggered event controls are not supported for synthesis [C:/Users/Florin/Desktop/CN2/tema2/project_2/project_2.srcs/sources_1/new/H2.v:33]
+ERROR: [Synth 8-285] failed synthesizing module 'H2' [C:/Users/Florin/Desktop/CN2/tema2/project_2/project_2.srcs/sources_1/new/H2.v:23]
+ERROR: [Synth 8-285] failed synthesizing module 'TOP' [C:/Users/Florin/Desktop/CN2/tema2/project_2/project_2.srcs/sources_1/new/TOP.v:23]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:14 . Memory (MB): peak = 301.406 ; gain = 94.023
+---------------------------------------------------------------------------------
+synthesize failed
+INFO: [Common 17-83] Releasing license: Synthesis
+4 Infos, 0 Warnings, 6 Critical Warnings and 4 Errors encountered.
+synth_design failed
+ERROR: [Common 17-69] Command failed: Vivado Synthesis failed
+INFO: [Common 17-206] Exiting Vivado at Mon Jan 15 16:28:33 2018...

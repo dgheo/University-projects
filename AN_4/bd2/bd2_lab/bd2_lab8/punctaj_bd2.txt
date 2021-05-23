@@ -1,0 +1,27 @@
+-- punctaj bd2
+
+7 evaluari
+
+max: 7 * 1,5 = 10,5
+peste 7 prezente: rotunjire
+
+
+9prezente
+
+2/4
+3/4
+3/4
+3/4
+4
+4
+4
+
+1,5 * 3 = 4,5
+1,125 * 3 = 3,375
+4,5 + 0,75 + 3,375 = 8,625 + 0.5
+
+lab=3p:
+10% 
+40%activitate
+50% colocviu
+

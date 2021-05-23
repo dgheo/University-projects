@@ -1,0 +1,79 @@
+#-----------------------------------------------------------
+# Vivado v2016.2 (64-bit)
+# SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
+# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+# Start of session at: Fri Nov 17 22:19:44 2017
+# Process ID: 13796
+# Current directory: F:/Anul 3 laboratore si cursuri/CN2/tema2-laur/project_2
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent4500 F:\Anul 3 laboratore si cursuri\CN2\tema2-laur\project_2\project_2.xpr
+# Log file: F:/Anul 3 laboratore si cursuri/CN2/tema2-laur/project_2/vivado.log
+# Journal file: F:/Anul 3 laboratore si cursuri/CN2/tema2-laur/project_2\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {F:/Anul 3 laboratore si cursuri/CN2/tema2-laur/project_2/project_2.xpr}
+update_compile_order -fileset sources_1
+close_project
+open_project {F:/Anul 3 laboratore si cursuri/CN2/tema2-laur/project_2/project_2.xpr}
+update_compile_order -fileset sources_1
+launch_simulation
+source Simulation_TOP.tcl
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top FDCE [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+source FDCE.tcl
+close_sim
+launch_simulation
+source FDCE.tcl
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top Simulation_CB4CLE [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+source Simulation_CB4CLE.tcl
+close_sim
+current_sim simulation_3
+close_sim
+close_sim
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top FDCE [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+source FDCE.tcl
+launch_runs impl_1
+wait_on_run impl_1
+close_sim
+launch_simulation
+source FDCE.tcl
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top Simulation_FDCE [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+source Simulation_FDCE.tcl
+close_sim
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top Simulation_CB4CLE [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+source Simulation_CB4CLE.tcl
+close_sim
+close_sim

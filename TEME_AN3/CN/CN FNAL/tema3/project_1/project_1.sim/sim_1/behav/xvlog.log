@@ -1,0 +1,6 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Florin/Desktop/CN2/tema3/project_1/project_1.srcs/sources_1/new/max16b.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module max16b
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Florin/Desktop/CN2/tema3/project_1/project_1.srcs/sim_1/new/sim_max16b.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_max16b
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Florin/Desktop/CN2/tema3/project_1/project_1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl

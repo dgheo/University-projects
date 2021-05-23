@@ -1,0 +1,47 @@
+
+					README TEMA 1 
+				Programare orientata pe obiecte
+TEMA: SUPERMARKET
+
+Numele: Digori Gheorghe
+Grupa: 321CC
+Gradul de dificultate al teme: Mediu spre Dificil
+Timpul alocat rezolvarii: o saptamana
+
+	In cadrul acestei teme am implementat o aplicatie ce simuleaza un magazin electronic, aplicand notiuni studiate in cadrul cursului de POO.
+
+Clasa Store:
+	Obiectul store este tip singleton. Magazinul are o lista de clienti, 4 departamente de prodeuse. 
+
+Departamentele:
+	Departamentele mostenesc clasa abstracta Department in care sunt implementate metodele. Fiecare departament are un nume ,un ID, o lista de pruduse, o lista de clienti, in aceasta lista sunt adaugati clientii care au cel putin un produs din departmanentul respectiv, si o lista de observatori in care sunt adaugati clientii care au cel putin un prosud apartinand departamentului respectiv in WishList.
+
+Clasa Customer:
+	Fiecare obiect de tip client are un nume, o lista de tip ItemList care reprezinta ShoppingCardul clientului adica produsele pe care clientul lea achizitionat ordinate dupa pret si nume, obiectul de tip ShoppingCart avand specific bugetul clientului, o lista de tip WishList in care sunt pastrate produsele dorite de client in ordine alfabetica. Deasemenea o lista de notificari in care se adauga notificarile primite de client in cazul iin care e observator.
+	Clientii au predefinita si o strategie de cumparare caracteristica fiecaruia in baza caraia se eecuta niste operatii pe lista de WishList si ShoppingCard acesta strategie foloseste patternul Strategy.
+
+Clasa Item:
+	Fiecare obiect de tip Item are un nume un ID si un pret.
+
+Clasa ItemList
+Clasa abstractã ItemList modeleazã o listã liniarã dublu înlãntuitã si sortatã, având elemente de tip
+Item. Aceastã clasã contine o clasã internã staticã Node, folositã pentru reprezentarea unui nod al listei
+si o clasã internã ItemIterator, care implementeazã interfata ListIterator. Pentru a realiza usor inserarea
+elementelor în listã astfel încât aceasta sã rãmânã sortatã, clasa are ca membru un Comparator folosit pentru a ordona itemii din WhishList si ShoppingCard la inserare.
+
+Clasa Notification:
+Fiecare client detine o colectie de notificãri pe care le primeste atunci când este modificat pretul unui
+anumit produs dintr-un departament care s-ar putea sã-l intereseze: are cel put, in un produs apartinând
+departamentului în lista sa de preferinte; când este adãugat un nou produs în departamentul respectiv sau
+când este eliminat un produs. Notification  foloseste patternul Observer.
+
+Interfata Visitor:
+	Foloseste patternul visitor si este folosit la implementarea metodei accept specifica fiecarui departament.
+
+Iterfata Strategy:(Bonus)
+	Parseaza in funtie de tipul strategie whislist-ul unui client pe care executa niste operatii.Foloseste la implementarea patternului Strategy.
+
+Clasa Test:
+	Este clasa principala in care fac citirea din fisiere lista de produse numele marketului, departamentele ,lista de clienti,lista de evenimente, creez obiectul de tip store singleton si celelalte obiecte tip Item, Customer, Departament. La citirea evenimentelor tratez fiecare eveniment, aplicand modificarile necesare. 
+	
+

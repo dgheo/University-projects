@@ -1,0 +1,99 @@
+In summary, the contribution of this successor paper is threefold:
+(1)
+Technical development of a standalone, wearable finger-worn prototype, FingerReader2.0, in the form of
+a small ring with a camera and touch input, which is able to recognize products and notes to help PVI
+acquire products.
+(2)
+Introduction of the user-centered design process to understand the needs of our user group, as well as
+discovering challenges and opportunities for the design and evaluation of an assistive finger-worn smart
+eye.
+(3)
+Compiled insights for designing wearable assistive pointing interfaces for PVI based on interviews, focus
+groups, and a field study using the FingerReader2.0 prototype inside a supermarket.
+-------------
+
+This project differs from the related work described above as follows: i)
+different application domain:
+we focus on mobile usage, with the use case of shopping. ii)
+discrete interaction technique:
+point-and-shoot
+interaction is enabled through a touchpad embedded in the ring. iii)
+technological advancement:
+FingerReader2.0
+is standalone, wearable, not tethered to the computer like FingerReader [38] or HandSight [41]. iv)
+emergent
+algorithms:
+FingerReader2.0 uses deep learning algorithms to analyze the images and provides information about
+the item, while previous versions [38], uses computer vision algorithms to perform an OCR task.
+--------------------------------
+
+System Architecture
+The prototype contains three hardware components:
+(1) a ring with an embedded camera and a touch interface (
+see Figure 2 - B
+). The location of the camera enables
+the system to capture the image of what the user is pointing at, while simultaneously allowing the user to control
+the device through the touch interface. The ring is tethered to the second component,
+(2) a wristband that contains the processing unit. This processing unit is composed of a system on board, a
+wireless module (Wifi+BLE), and a battery (
+see Figure 2 - C
+). The processing unit transmits the captured images
+to a third component,
+(3) a smartphone through Wifi communication. The smartphone performs the image analysis and delivers the
+information to a user through a Bluetooth Headset or through the phone’s speaker.
+-----
+
+4.2    Ring Hardware Prototype
+Electronics
+: The ring incorporates a VGA camera module ov7675, with a lens size of 1/9" and 67
+◦
+aperture. This
+camera is connected to a main custom made PCB, where there is an SN9C5281BJG DSP from SONIX that controls
+the CMOS image sensor and transmits the image over a UVC protocol to the external processing unit. On the left
+side of the ring, there is a 15mm x 20mm touch interface, implemented on an external custom made PCB. This
+sends the results of the touch input to the external processing unit. The price of the ring electronic components
+Proc. ACM Interact. Mob. Wearable Ubiquitous Technol., Vol. 2, No. 3, Article 94. Publication date: September 2018.
+FingerReader2.0: Designing and Evaluating a Wearable Finger-Worn Camera...
+•
+94:7
+is as low as 22 USD per unit (producing 200units), making this prototype affordable. Power consumption of the
+ring is about 4.98mA while streaming 30Fps VGA video image.
+---
+
+4.3    Wristband Hardware Prototype
+To provide a wearable hands-free experience, the processing unit is physically separated from the small ring
+with a camera. Hence, the processing unit and battery were moved to the wristband prototype connected with a
+cable to the ring (
+see Figure 2 - A
+) prototype. This design allows a wearable hands-free experience, in contrast to
+holding a smartphone.
+Electronics
+: The wristband processing unit is based on a custom made PCB that operates on an Intel Edison
+SOM (system on module). This wristband also includes a Dual-core Intel Atom 500MHz processor, 1GB DDR3
+RAM, 4GB eMMC flash, Bluetooth 4.0, Wifi, Wi-Fi Direct. The system runs an embedded Linux Yocto 1.1. The
+wristband is interconnected with the ring through a total of 6 wires. An I2C protocol (SDA and SCL) for the touch
+interface, D+ and D- for the camera (UVC protocol), power (3V3), and ground. Both the ring and the wristband
+are powered from a 450mA, 3.7V Lithium polymer battery located in the bracelet. The power consumption tests
+show that the device can last approximately 3.5 hours.
+Software
+: The wristband serves three main tasks: 1) read from the touch sensor, interpret, and classify gestures.
+2) Control the driver of the camera, the wristband configures and captures images from the CMOS camera
+through the UVC protocol. 3) Communicates to the smartphone through a TCP/IP socket on top of the previously
+established phone-hotspot. The wristband sends the gestures performed by the user as well as the images captured.
+-----
+
+4.4    Phone Application
+A hotspot network is opened by the phone to connect with the wristband. Once this communication occurs, an
+Android phone application receives and analyzes the images from the wristband. Performing the
+point-and-shoot
+gesture triggers the application to shoot the photo by the finger-worn camera. The received image is analyzed
+with an on-board identification and an external scene description. Once the image analysis result is returned in
+plain text, the system synthesizes the audio by using Google text-to-speech engine. The user receives the output
+through the phone speaker or via Bluetooth headphones.
+4.5    Image Understanding and Communication
+In order to identify the object the user is pointing at, we evaluated various state-of-the-art image recognition
+libraries using our hardware prototype. In conclusion, the creators decided to implement a hybrid approach, which
+analyzes the captured image in parallel (1) using an on-board deep learning algorithm, as well as (2) sending it to
+an external cloud vision API. By default, we set priority to their own on-board identification algorithm. When a
+confident result cannot be achieved, a result from an external cloud service is then requested
+

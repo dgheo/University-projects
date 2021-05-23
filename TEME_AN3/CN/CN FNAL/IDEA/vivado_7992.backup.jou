@@ -1,0 +1,36 @@
+#-----------------------------------------------------------
+# Vivado v2016.2 (64-bit)
+# SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
+# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+# Start of session at: Tue Jan 16 13:40:45 2018
+# Process ID: 7992
+# Current directory: C:/Users/gelud/Desktop/IDEA
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent6004 C:\Users\gelud\Desktop\IDEA\IDEA.xpr
+# Log file: C:/Users/gelud/Desktop/IDEA/vivado.log
+# Journal file: C:/Users/gelud/Desktop/IDEA\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/gelud/Desktop/IDEA/IDEA.xpr
+update_compile_order -fileset sources_1
+save_project_as project_IDEA_tema5 C:/Users/gelud/Desktop/project_IDEA_tema5 -force
+launch_simulation
+source test.tcl
+close_sim
+launch_simulation
+source test.tcl
+close_sim
+launch_simulation
+source test.tcl
+close_sim
+launch_simulation
+source test.tcl
+close_sim
+launch_simulation
+source test.tcl
+close_sim
+launch_simulation
+source test.tcl
+close_sim
+launch_simulation
+source test.tcl
+close_sim

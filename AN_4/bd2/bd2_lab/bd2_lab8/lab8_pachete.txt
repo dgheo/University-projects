@@ -1,0 +1,118 @@
+-- Laborator 8
+
+-- show errors
+-- col object_name for a20;
+
+Un pachet = creat ca un obiect în dicționarul bazei de date.
+
+Un pachet (package) = o bibliotecă de obiecte stocate pe server:
+	procedurilor
+	funcțiilor
+	cursoarelor
+	tipurilor de date
+	excepțiilor
+	variabilelor
+	constantelor
+	
+	
+	
+Un  pachet este compus din două secțiuni distincte: 
+	– O secțiune de creare (create package) care conține specificațiile globale 
+(publice) de declarare a conținutului (structura obiectelor) ... pot fi apelate din orice program PL/SQL
+
+			CREATE [OR REPLACE] PACKAGE package_name {IS|AS}
+			global (public) types and variable declarations
+			global (public) subprogram specifications
+			END [package_name]
+
+			Referirea într-un program PL/SQL a unei componente globale (publice):
+			package_name.type_name
+			package_name.item_name
+			package_name.subprogram_name
+
+	– O secțiune care cuprinde corpul pachetelor (package body) în care sunt 
+descrise efectiv obiectele și subprograme, variabile, structuri locale (private) ... accesibile 
+numai în blocurile în care au fost definite
+
+			CREATE [OR REPLACE] PACKAGE BODY package_name IS|AS
+			local type and variable declarations
+			subprogram bodies
+			[BEGIN
+			initialization statements
+			end;]
+			END [package_name]
+			
+			
+			
+		
+		
+Pachetele create de userul curent:
+		SELECT object_name, created, last_ddl_time, status
+		FROM user_objects
+		WHERE object_type='PACKAGE';
+		
+		
+Secțiunea de specificații a pachetului:
+		SELECT text
+		FROM user_source
+		WHERE lower(name)='p_test' and lower(tyoe)='package'
+		ORDER BY line;
+		
+Codul sursă al unui pachet:
+		SELECT text
+		FROM user_source
+		WHERE lower(name)='p_test' and lower(tyoe)='package body'
+		ORDER BY line;
+
+Specificațiile și corpul unui pachet se pot șterge din dicționar:
+		DROP PACKAGE pakage_name;
+		
+Pentru a șterge numai corpul unui pachet:
+		DROP PACKAGE BODY package_name;
+		
+Pentru a da privilegii de execuție a pachetelor altor utilizatori, utilizatorul 
+care a creat pachetul (sau administratorul):
+		GRANT EXECUTE ON package_name TO user_name;
+		
+Utilizatorul grantificat poate apela:
+		EXECUTE user_name.package_nane.procedure_name;
+		
+O procedură poate fi apelată și dintr-un bloc SQL:
+		DECLARE
+		BEGIN
+		...
+			user_name.package_name.procedure_name;
+		...
+		END;
+
+Pentru a revoca privilegiile de execuție:
+		REVOKE EXECUTE ON package_name FROM user_name;
+
+
+
+
+
+Serverul Oracle conține câteva pachete standard(de sistem):
+		DBMS_STANDARD
+		DBMS_OUTPUT
+		DBMS_PIPE
+		UTL_FILE
+		UTL_HTML
+		DBMS_SQL
+		DBMS_ALERT
+
+
+Pentru vizualizarea mai multor informații din dicționar, legate de pachetele 
+standard(view-urile de sistem DBA_OBJECTS și DBA_SOURCE, acesibile userului system sau celor care au privilegiul DBA):
+		SELECT text 
+		FROM dba_source
+		WHERE lower(name) = 'package_name' AND lower(type)='package' 
+		ORDER BYline;
+
+
+Pachetele standard pot fi activate sau dezactivate (ENABLE/DISABLE):
+		SET standard_package {ON|OFF}
+
+
+
+

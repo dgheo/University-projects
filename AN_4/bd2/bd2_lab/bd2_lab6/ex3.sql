@@ -1,0 +1,1 @@
+--   @C:\Users\alina\Desktop\bd2_lab6\ex3.txt

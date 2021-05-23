@@ -1,0 +1,13 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../IDEA.srcs/sources_1/new/KEYGEN.v" \
+"../../../../IDEA.srcs/sources_1/new/pasFinal.v" \
+"../../../../IDEA.srcs/sources_1/new/pasulx.v" \
+"../../../../IDEA.srcs/sources_1/new/topModule.v" \
+"../../../../IDEA.srcs/sim_1/new/test.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

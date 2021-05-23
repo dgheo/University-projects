@@ -1,0 +1,103 @@
+#-----------------------------------------------------------
+# Vivado v2016.2 (64-bit)
+# SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
+# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+# Start of session at: Tue Jan 16 15:23:46 2018
+# Process ID: 11028
+# Current directory: C:/Users/gelud/Desktop/CN FNAL/tema5/project_ideea_Cn
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent1244 C:\Users\gelud\Desktop\CN FNAL\tema5\project_ideea_Cn\project_ideea_Cn.xpr
+# Log file: C:/Users/gelud/Desktop/CN FNAL/tema5/project_ideea_Cn/vivado.log
+# Journal file: C:/Users/gelud/Desktop/CN FNAL/tema5/project_ideea_Cn\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {C:/Users/gelud/Desktop/CN FNAL/tema5/project_ideea_Cn/project_ideea_Cn.xpr}
+INFO: [Project 1-313] Project file moved from 'C:/Users/gelud/Desktop/project_ideea_Cn' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2016.2/data/ip'.
+update_compile_order -fileset sources_1
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'test' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/gelud/Desktop/CN FNAL/tema5/project_ideea_Cn/project_ideea_Cn.sim/sim_1/behav'
+"xvlog -m64 --relax -prj test_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/gelud/Desktop/CN FNAL/tema5/project_ideea_Cn/project_ideea_Cn.srcs/sources_1/new/KEYGEN.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module KEYGEN
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/gelud/Desktop/CN FNAL/tema5/project_ideea_Cn/project_ideea_Cn.srcs/sources_1/new/pasFinal.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pasFinal
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/gelud/Desktop/CN FNAL/tema5/project_ideea_Cn/project_ideea_Cn.srcs/sources_1/new/pasulx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pasulx
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/gelud/Desktop/CN FNAL/tema5/project_ideea_Cn/project_ideea_Cn.srcs/sources_1/new/topModule.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module topModule
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/gelud/Desktop/CN FNAL/tema5/project_ideea_Cn/project_ideea_Cn.srcs/sim_1/new/test.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/gelud/Desktop/CN FNAL/tema5/project_ideea_Cn/project_ideea_Cn.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/gelud/Desktop/CN FNAL/tema5/project_ideea_Cn/project_ideea_Cn.sim/sim_1/behav'
+Vivado Simulator 2016.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2016.2/bin/unwrapped/win64.o/xelab.exe -wto b65bc8735c4c4019b4277a0e0671c469 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_behav xil_defaultlib.test xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.KEYGEN
+Compiling module xil_defaultlib.pasulx
+Compiling module xil_defaultlib.pasFinal
+Compiling module xil_defaultlib.topModule
+Compiling module xil_defaultlib.test
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_behav
+
+****** Webtalk v2016.2 (64-bit)
+  **** SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
+  **** IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/gelud/Desktop/CN -notrace
+couldn't read file "C:/Users/gelud/Desktop/CN": no such file or directory
+INFO: [Common 17-206] Exiting Webtalk at Tue Jan 16 15:24:21 2018...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 788.754 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/gelud/Desktop/CN FNAL/tema5/project_ideea_Cn/project_ideea_Cn.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "test_behav -key {Behavioral:sim_1:Functional:test} -tclbatch {test.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.2
+Time resolution is 1 ps
+source test.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+006400c8012c019001f4025802bc0320 
+006400c8012c019001f4025802bc0320 
+FINAL:
+451f
+ fed4
+ ff38
+ 5148
+ 451fff38fed45148 
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'test_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:10 . Memory (MB): peak = 788.754 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Jan 16 17:23:13 2018...
