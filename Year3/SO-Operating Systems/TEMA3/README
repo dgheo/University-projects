@@ -1,0 +1,23 @@
+						Readme 
+				   
+				  Tema 3 SO - Loader de executabile
+
+Student: Digori Gheorghe 331CC
+
+
+Descriere generala:
+--------------
+	In cadrul acestei teme am implementat sub forma unei biblioteci partajate/dinamice un loader de fișiere executabile în format ELF pentru Linux. Loader-ul încărca fișierul executabil în memorie pagină cu pagină, folosind un mecanism de tipul demand paging - o pagină va fi încărcată doar în momentul în care este nevoie de ea. Pentru simplitate, loader-ul ruleaza doar executabile statice - care nu sunt link-ate cu biblioteci partajate/dinamice.
+
+
+Idee implementare:
+-----
+	Programul are ca scop rezolvarea de "page fault-uri" pentru executabile primte.
+Odata cu parsarea executabilului sunt generate si datele despre segmente.Odata cu pornirea executabilului, la aparitia unui "page fault" se salveaza adrea de memeorie care a generat semnalul de exceptie.Este determinat in ce segment si in ce pagina se afla adresa care a generat seg fault si se mapeaza o pagina. In anumite cazuri se copie date din executabil in pagina data.
+
+	Tema este implementata in fierul loader.c folosind desigur si scheletul oferit.
+	Mi-am definit o structura "page_struct" in care salvez numarul paginii si adresa catre pagina urmatoare(de forma unei liste inlantuite).
+	Am implementat un handler in care caut in ce segment si in ce pagina din acel segment se afla adresa care a generat exceptia page fault.In momentul in care am gasit pagina unde sa exceptia, indetific adresa de start a paginii in memorie si mapez fix la adresa de inceput a paginii. Se verifica campul file_size al fragmentului si in cazul in care pagina contine bytes din fisierul executabil, acestia sunt copiati cu functia memcpy.
+Pagina nou mapata se protejeaza cu ermisiunile specifice segmentului folosing functia POSIX C mprotect.
+
+	Sunt verificate falorile de retur pentru functiile POSIX, etc. cu ajutorul macroului DIE. Macroul l-am definit in fisierul "exec_parser.h"

@@ -1,0 +1,186 @@
+
+ 				TEMA 2 - Arhitectura Sistemelor de Calcul
+
+			Implementare Calcul matricial C = A * A(T) cu numere complexe
+
+
+Student: Digori Gheorghe
+Grupa: 331 CC
+
+-------------
+Cuprins
+--------------
+1. Enunt
+2. Detalii
+3. Implementare si compilare
+4. Explicatii plot-uri
+
+--------
+1.Enunt:
+--------
+Se da operatia C = A * A(T) unde A este o matrice de numere complexe (a + b*i), a si b de tipul double si A(T) este transpusa lui A.
+
+Se cere implementarea operatiei in 4 moduri.
+
+
+-------------
+2. Descriere:
+-------------
+Conform enuntului am implementat operatia de inmultire  C = A * A(T) unde A este o matrice de numere complexe (a + b*i), a si b de timpul double si A(T) este transpusa lui A.
+
+Operatia a fost impletata in 4 moduri:neoptim, optim , folosind functia zsyrk din BLAS Atlas si folosind flaguri de optimizare la compilare.
+
+In directorul cu surse am 2 Makefile-uri, unul care compileaza cu gcc si unul care compileaza cu icc si fisierele sursa. In urma compilarii se obtin 4 executabile: 
+"tema2_blas", "tema2_neopt, "tema2_opt_m și "tema2_opt_f" 
+- corespunzatoare celor 4 variante de implementare a calculului cerut.
+-Implementarile au fost testate folosind un checker, analizand rezultatele returnate de implemntarile mele si rezultele din cele 5 referinte date in enunt.
+
+----------------
+3. Implementare:
+----------------
+
+	I.Varianta neoptima - este implementata in fisierul sursa "solver_neopt.c". In cadrul implementarii acestei variante am alocat o noua matrice C in care salvez rezultatul inmultirii, si fac o inmultire clasica cu parcurgere in 3 foruri pe matricea A si A(T). Pentru a nu calcula transpusul matricei A m-am folosit direct de proprietatea matriciala : "A(i,j) = A(T)(j, i)". Produsul numerelor complexe e calculat folosind formula generica pentru numere complexe:"(a + b*i)(c + d*i) = (ac - bd) + (ad + cb) *i".
+
+	II. Varianta optima(de mine) - este implementate in fisierul "solver_opt.c". Practic am pornit la implementarea neoptima. Si ca optimizari am folosit declararea unor variablie suma de tip register double in care stochez temporar rezultatele itreratiei k, iar apoi in iteratia j le copii in matricea rezultat. 
+Aceasta optimizare a adus o impunatatire de performanta la nivel de timp cu aproximativ 25-30%. 
+Obs: In scopul optimizarii am mai incercat varianta cu partitionare si schimbarea ordenii for-urilor care insa nu mi-au adus imbanatatiri de performanta.
+
+	III. Varianta optimizata (cu flaguri la compilare) - executabilul este generat din fisierul sursa "solver-neopt.c" fiind compilat cu flagul de optimizare -O3. Practic pentru acest task doar am modificat, in makefile-uri, flagul OTHER_C_FLAGS=-Wall -Werror -O0 in OTHER_C_FLAGS=-Wall -Werror -O3.
+In urma rularii fisierului executabil obtinut "tema2_opt_f" pe fisierul de "imput" se observa o crestere foarte buna a performantei, adica o scadere considerabila de timp de executie cu aproximativ 900%(adica de 9ori mai rapid) decat varianta neoptima de la care pornesc.
+
+
+	IV. Varianta blas (folosind functia zsyrk) -este implementata in fisierul solver_blas.c. In cadrul implementarii acestei varinte am inclus biblioteca cblas.h si am apelat practic in functia mea, functia zsyrk din BLAS Atlas setind argumentele corespunzatoare, care imi returneaza in matricea alocata de mine: "C" - rezultatul executiei. 
+	In urma rularii acestei variante am obtinut cei mai buni timpi approximativ de 20 de ori mai rapid decat varianta neoptima, aceast implementare fiind cea mai optima.   
+
+---------------------------------
+4.Explicatii rezultate si ploturi:
+---------------------------------
+
+Pentru analaiza performatelor celor 4 variante, folosind cele 2 tipuri de compilatoare "gcc" si "icc" am stocat datele obtinute in urma rularii celor 4 varinte pe coada "ibm-dq.q" in fisiere .dat. Pentru analiza vizuala a performantelor am creat niste scripturi *_plot la rularea carora cu ajutorul comenzii ">gnuplot *_plot"(in terminal) se genereaza graficele comparative de performata in functie de timp pe cele 5 teste date ca referinta.
+
+
+-----
+a)Varinta neoptima (Analiza comparativa gcc vs icc)
+-----
+In urma rularii pe coada ibm-dq.q am obtinut urmatoarele rezulate:
+
+			Folosing compilatorul gcc:			Folosind icc.
+
+            DIM	   TIMPI					   TIMPI
+Test 1		1000	 10.653871					 10.699784
+Test 2		1200	 18.520329					 18.864637
+Test 3		1400	 29.392820					 29.801060
+Test 4		1600	 43.074467					 44.551998
+Test 5		1800	 61.898193					 63.268593
+
+Aceste rezultate se regasesc si in fiserele gcc-neopt.dat si icc-neopt.dat.
+
+Se observa, desi diferenta e mica, ca in urma compilarii cu gcc timpul e mai scazut, deci performanta cu gcc este mai mare, in cazul varintei neoptime.
+
+La rularea: ">gnuplot neopt_plot"(in terminal)  se pot vizualiza grafic rezultatele.
+
+
+-----
+b)Varianta optima_manual (Analiza comparativa gcc vs icc)
+-----
+
+In urma rularii pe coada ibm-dq.q am obtinut urmatoarele rezulate:
+
+			Folosing compilatorul gcc:			Folosind icc.
+
+            DIM	   TIMPI					   TIMPI
+Test 1		1000	 7.954978					 8.215452
+Test 2		1200	 13.166752					 13.893122
+Test 3		1400	 20.815662					 21.894209
+Test 4		1600	 31.542192					 32.289265
+Test 5		1800	 44.510712					 46.162716
+
+Aceste rezultate se regasesc si in fiserele gcc-opt-m.dat si icc-opt-m.dat.
+
+Se observa,ca si la varianta neoptima desi diferenta e mica ca in urma compilarii cu gcc timpul e mai scazut, deci performanta cu gcc este mai mare, in cazul varintei optimizate manul(de mine).
+
+La rularea: ">gnuplot opt_m_plot"(in terminal)  se pot vizualiza grafic rezultatele.
+
+
+c)Varianta optimizata cu flaguri (-O3) (Analiza comparativa gcc vs icc)
+-----
+
+In urma rularii pe coada ibm-dq.q am obtinut urmatoarele rezulate:
+
+			Folosing compilatorul gcc:			Folosind icc.
+
+            DIM	   TIMPI					   TIMPI
+Test 1		1000	 1.242025					 1.609129
+Test 2		1200	 2.389073					 2.955973
+Test 3		1400	 3.485424					 4.592710
+Test 4		1600	 5.784474					 6.588544
+Test 5		1800	 7.270033					 9.391634
+
+Aceste rezultate se regasesc si in fiserele gcc-opt-f.dat si icc-opt-f.dat.
+
+Se observa,o crestere considerabila de performanta, timoo scat de aproape 8-9 ori fata de varianta neoptima dar ca si la varianta neoptima desi diferenta e mica ca in urma compilarii cu gcc timpul e mai scazut, deci performanta cu gcc este mai mare, in cazul varintei optimizate flaguri la compilare( in cazul dat optimizata cu -O3)
+
+La rularea: ">gnuplot opt_f_plot"(in terminal)  se pot vizualiza grafic rezultatele.
+
+
+---------------------------------------------------------------------------------
+d)Varianta BLAS folosind functia zsyrk din ATLAS (Analiza comparativa gcc vs icc)
+---------------------------------------------------------------------------------
+
+In urma rularii pe coada ibm-dq.q am obtinut urmatoarele rezulate:
+
+			Folosing compilatorul gcc:			Folosind icc.
+
+            DIM	   TIMPI					   TIMPI
+Test 1		1000	 0.563551					 0.494066
+Test 2		1200	 0.964465					 0.966184
+Test 3		1400	 1.521242					 1.523687
+Test 4		1600	 2.216499					 1.965632
+Test 5		1800	 3.035800					 3.038499
+
+Aceste rezultate se regasesc si in fiserele gcc-blas.dat si icc-blas.dat.
+
+Se observa,ca aceasta varianta este cea mai optima si are cele mai bune reziltate fiind cam de 20 de ori mai rapida decat varianta neoptima. Tot odata, se observa ca pe unele teste(test:1, 4) rezultatele compilarii cu icc sunt mai bune decat rezultatele obtinute cu gcc desi diferenta e foarte mica si testele (2,3 5) au un timp mai bun in urma compilarii cu gcc.
+
+La rularea: ">gnuplot blas_plot"(in terminal)  se pot vizualiza grafic rezultatele.
+
+
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+e) Analiza comparativa:  blas vs neopt vs opt_m vs opt_f a performanței pentru gcc:
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Graficul pentru aceasta analiza se obtine la rularea comenzii: ">gnuplot gcc_plot"(in terminal) fisierul regasindu-se in folderul "grafice".
+						GCC
+---------------------------------------------------------------------------------------------------------
+TEST |	DIM  |  TIMPI tema2_neoptim  |  TIMPI tema2_optim_m  |  TIMPI tema2_optim_f  |  TIMPI tema2_blas
+---------------------------------------------------------------------------------------------------------
+Test 1	1000	    10.653871			7.954978		1.242025		0.563551
+Test 2	1200	    18.520329			13.166752		2.389073		0.964465
+Test 3	1400	    29.392820			20.815662		3.485424		1.521242
+Test 4	1600	    43.074467			31.542192		5.784474		2.216499
+Test 5	1800	    61.898193			44.510712		7.270033		3.035800
+	
+->Se observa ca varianta neoptima are performatina cea mai mica iar varinta blas performanta mult mai mare aproximativ de 20 de ori.
+->Se observa ca optimizarea cu flaguri da performante mult mai ridicata decat optimizarea manuala.
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+f) Analiza comparativa:  blas vs neopt vs opt_m vs opt_f a performanței pentru icc:
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Graficul pentru aceasta analiza se obtine la rularea comenzii: ">gnuplot icc_plot"(in terminal)  fisierul regasindu-se in folderul "grafice".
+						ICC
+---------------------------------------------------------------------------------------------------------
+TEST |	DIM  |  TIMPI tema2_neoptim  |  TIMPI tema2_optim_m  |  TIMPI tema2_optim_f  |  TIMPI tema2_blas
+---------------------------------------------------------------------------------------------------------
+Test 1	1000	    10.699784			8.215452		1.609129		0.494066
+Test 2	1200	    18.864637			13.893122		2.955973		0.966184
+Test 3	1400	    29.801060			21.894209		4.592710		1.523687
+Test 4	1600	    44.551998			32.289265		6.588544		1.965632
+Test 5	1800	    63.268593			46.162716		9.391634		3.038499
+
+	
+->Se observa ca varianta neoptima are performatina cea mai mica iar varinta blas are performanta mult mai mare, aproximativ de 20 de ori.
+->Se observa ca optimizarea cu flaguri da performante mult mai ridicata decat optimizarea manuala.

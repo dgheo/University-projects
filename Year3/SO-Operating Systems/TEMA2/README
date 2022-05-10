@@ -1,0 +1,60 @@
+                                                        Tema2 SO - MiniShell
+
+Digori Gheorghe 331CC
+
+Functii in care am lucrat: cmd.c
+
+
+In cadrul acestei teme am implementat un shell simplu, care suportă execuția de comenzi externe cu argumente multiple, comenzi interne, redirectări, pipe-uri. Shell-ul suporta execuția de comenzi compuse, cu oricâți operatori. 
+
+Tema se ruleaza pe un sistem Linux 32.
+
+Descriere implementare functii:
+
+
+
+parse_command:
+
+	- m-am ocupat de fiecare switch in parte respectand indicatiile din TO DO
+	- functia se apeleaza recursiv pentru operatiile secventiale.
+
+parse_simple:
+
+	-in cadrul acestei functii testez functionalitatile variabilelor de mediu si comenzilor interne externe.
+
+	-initial imi salvez file descriptorii si dupa apelez functia care executa redirectarile in functie de comanda primita.
+	- mi-am extras comanda si argumentul dupa care verific intro bucla do while
+	- daca am comanda cd apelez functia shell_cd si ies din bucla.
+	- daca am primit comanda "quit" sau "exit" se apeleaza functia shell_exit
+	- daca am comanda de enviroment extrag din comanda numele si valoarea si setez variabilele cu ajutorul setenv();
+	- daca am o comanda externa creez un proces nou si il execut, daca executia esueaza atunci afisez un mesaj predifinit in stderr.
+
+
+solve_redirection:
+	- in cadul acestei functii verific ce am in scmd si redirectez 
+	-mi-am creat 3 functii auxiliare care sunt apelate in functie de tipul redirectarii
+	si executa redirectarea propru-zisa catre STDIN STDOUT sau STDERR
+
+free_and_close
+	elibereaza memoria si inchide filedesciptorii
+
+shell_cd:
+	-verifica initial daca cd e insotit de un argument si daca nu tratez eroarea
+	-daca am primit si o cale atunci cu ajutorul chdir() ma deplasez(in terminal) la calea primita.
+
+shell_exit:
+	- in cadrul acestei functii doar se executa ierea din shell si eliberarea memoriei.
+
+
+do_in_parallel:
+	- in cadrul acestei functii se deschid 2 procese in paralel astfel primul executa comanda 1 si al 2-lea comanda a-2 primtia
+	- comanda parinte asteapta sa se termine comanda compil pentru a evita aparitia proceselor zombie
+	- sunt tratate erorile posibile cu DIE.
+
+on_pipe:
+	-initial salvez filedescriptorii in si out. Execut un pipe(), fork(), redirectarile sunt executate catre pipe 
+	- se executa prima comanda in copil si a 2 in parinte. La final parintele isi asteapta copilul se inchid capetele la pipe si se refac filedescriptorii initiali.
+
+Dificultati:
+	- Destul de greu de executat debug.
+	

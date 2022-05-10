@@ -1,0 +1,8 @@
+set title "Performante gcc_neopt VS icc_neopt"
+set xrange [1000:1800]
+set yrange [0:70]
+set xlabel "dimensiune"
+set ylabel "timp (s)"
+plot "gcc-neopt.dat" with linespoints, "icc-neopt.dat" with linespoints
+pause -1
+

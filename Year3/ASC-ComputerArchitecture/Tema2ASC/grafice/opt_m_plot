@@ -1,0 +1,8 @@
+set title "Performante gcc_opt_m VS icc_opt_m"
+set xrange [1000:1800]
+set yrange [0:50]
+set xlabel "dimensiune"
+set ylabel "timp (s)"
+plot "icc-opt-m.dat" with linespoints, "gcc-opt-m.dat" with linespoints
+pause -1
+

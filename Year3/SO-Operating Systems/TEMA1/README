@@ -1,0 +1,34 @@
+						README 
+					TEMA 1 SO - Multi-platform Development
+
+Nume: Digori Gheorghe 331CC
+
+	Descriere
+
+Programul primeste o serie de parametri fiecare pe linie noua dintr-un fisier sau de la STDIN. Acesti parametri in functie de ordinea lor sunt parsati de o functie parse_command definita in fisierul tema1.in.
+
+	Implementare:
+
+In cadrul acestei teme am implementat conform cerintei in limbajul C o tabela de dispersie(hashtable) ce stocheaza un set de cuvinte. In cadrul tabele am implementat un set de instructiuni care permit adaugare si stergere de cuvinte grupate in bucketi, gasire cuvinte, redimensionare dubla sau in jumate a tabelei, afisarea continutului intregei tabele sau afisarea unui singur bucket, stergere continut tabele.
+
+In implementarea temei am folosit folosit functii ANSI C, structuri uzuale de definire a unui hastable, operatiile fiiind implementate pe liste. Tabela fiind practic o lista de liste pe care se executa modificari.De asemenea am folosit biblioteci dinamice si lucru cu pointeri.
+
+In cadrul implementarii sa tinut cont de restrictiile necesare pentru ca codul sa fie functional in cadrul sistemelor de operare LINUX si Windows. De aceeas au fost create 2 makefiluri diferite.De asemeanea sa folosit macroul DIE pentru raportarea erorilor la STDOUT.
+
+In fisierul tema1.c se regaseste functia de main in care se apeleaa functia de creare a unei tabele dorite de dimensiunea size alocata dinamic se exuta citirea inputului care este stocat intrun buffer care ulterior este trimis functiei de parsare a comenzilor. In functie de comanda primita se apeleaza o functie definita in fisierul functions.c. 
+
+In fiserul functions.h sunt definete antetele functiilor executa actiuni pe hashtable sau afiseaza aceasta, precum si structurile de date ce definesc hastabel-ul. 
+
+In fisierul functions.c sunt implementate comenzile cerute in enuntul temei adica: 
+	add <cuvânt> 					-adauga un cuvant in tabel
+	remove <cuvânt> 				-sterge un cuvant din tabel
+	find <cuvânt> [<fișier_ieșire>] 		-gaseste un cuvant in tabel
+	clear 						-sterge tabela
+	print_bucket <index_bucket> [<fișier_ieșire>] 	-afisare bucket
+	print [<fișier_ieșire>] 			-afisare tabel
+	resize double 					-mareste dimensiunea tableei de 2 ori
+	resize halve 					-reduce dimensiune tabelei la jumate
+
+Debugul a fost realizat cu ajutorul printf, dprintf, valgrind, die_error pentru a rezolva problemele de compatibilitate si erorile de moemorie.
+
+

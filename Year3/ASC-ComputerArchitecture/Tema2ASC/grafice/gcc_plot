@@ -1,0 +1,7 @@
+set title "Performante GCC"
+set xrange [1000:1800]
+set yrange [0:70]
+set xlabel "dimensiune"
+set ylabel "timp (s)"
+plot "gcc-neopt.dat" with linespoints, "gcc-blas.dat" with linespoints, "gcc-opt-m.dat" with linespoints, "gcc-opt-f.dat" with linespoints
+pause -1

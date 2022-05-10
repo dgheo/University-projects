@@ -1,0 +1,26 @@
+ 						Tema 1 ASC
+						Crowdsensing
+
+Digori Gheorghe 331CC
+
+
+In cadrul acestei teme am implementat folosind limbajul Phyton o simulare a unui sistem de crowdsensing pentru noise mapping. Am implementat comportamentul concurent al unui set de device-uri carora le sunt atribuite scripturi cu informatii  (cereri despre poluarea din anumite zone).
+
+Pentru realizarea implematarii concurente am pornit de la scheletul de cod primit in enunt.
+Am folosit:
+ 	-O bariera reetratanta cu 2 semafoare pusa la dispozitie si in laboratorul 3.Implementarea regasinduse in fisierul barrier.py. 
+	-Variabile de Event pentru a sincroniza lucrul threadurilor.
+	-Sau folosit lock-ri pentru fiecare locatie pentru a asigura ca daca un worker trebuie sa modifice o locatie nici un alt worker nu va avea putea sa modifice sau citeasca acea locatie. 
+	-Sa folosit paradigma producator-consumator folosind Conditions().
+
+In fisierul device.py in functia 'init' am declarat variabilele si structurile necesare implementarii concurente. 
+	In functia setup fiecare device primeste o bariera reetratanta si se indentifica numarul de locatii.Pentru fiecare locatie se creeaza cate un lock. Device-urile sunt adaugate intr-o lista de locatii si se seteaza un eveniment.
+
+DeviceThread:
+	In functia run din clasa DeviceThread se asteapta ca configuratiile de setup sa fie terminate apoi pentru fiecare device din lista de device-uri se cconfigureaza barriera si lista de lock-uri de locatii. Se seteaza un eveniment si se asteapta terminarea configuratii.
+Ulterior creez un numar 8 thred-uri de tipul WorkerThread pe care le adaug intr-o lista si pe pornesc. 
+Intr-o bucla while(true) se afla vecinii curenti, se asteapta terminarea timepoint-ului adica ca toate scripturile sa fie primite.Fiecare thread incerca sa treaca de un semafor de timp Conditions pana poate sa extraga elemente din work queue.Se pun datele in 2 cozi una de vecini si ce contine perechea script locatie la parcurgerea acestei operatii se incrementaza o varibila ce reprezinta numerul de scripturi ce urmeaza sa fie executate de consumator(Thread) si se trimite o notificare pentru consumator, apoi se  se asteapta la barriera toate device-urile. La iesirea din bulca for se asteapta ca toate scriptuurile sa fie executate. Se notifica threadurile cu un semnal shut down si se inchid threadurile.
+
+WorkerThread
+	Clasa WorkerThread descrie un worker si operatiile pe care acesta urmaza sa le execute.Workerul primeste datele despre device. In functia run intr-o bucla while(true) threadul asteapta daca nu exista scriputri de prelucrat si nu a primit o notificare de shut down.Daca exista scripturi, threadul extrage informatia si decrementaza numarul de scripturi ce trebuie executate si trimite o notificare producatorului.Daca sa primti ordin te shut down se iese din bucla, altfel se acapareaza locatia se extrage informatia de la vecini si informatia proprie care se adauga intro lista. Se ruleaza scriptul pe datele colectate si se actualizeaza datele vecinilor si cele proprii pentru locatie dupa care se eliberaza lock-ul.
+La iesirea din bucla while se decrementaza numarul de scripturi existente si se timite o notificare.

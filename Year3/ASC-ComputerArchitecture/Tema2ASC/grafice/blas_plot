@@ -1,0 +1,8 @@
+set title "Performante gcc_blas VS icc-blas"
+set xrange [1000:1800]
+set yrange [0:4]
+set xlabel "dimensiune"
+set ylabel "timp (s)"
+plot "gcc-blas.dat" with linespoints, "icc-blas.dat" with linespoints
+pause -1
+
