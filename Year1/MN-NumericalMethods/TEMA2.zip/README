@@ -1,0 +1,32 @@
+Digori Gheorghe
+Grupa 311,Seria Cc
+Timp de lucru: 10 ore
+Tema2
+
+
+Task 1
+	Am citit nodurilor invecinate cu cel corespunzator liniei folosind functia fscanf.Am considerat ca este mai usor sa citesc cate o linie, decat sa incerc citirea cu fscanf element cu element(evident,dupa efectuarea "formalitatilor" de citire dintr-un fisier text: deschidere,etc).
+Astfel, am transformat direct intr-un vector de intregi sirul de caractere obtinut din fgets utilizand functia str2num.
+Am construit apoi matricea diagonala K, ce are pe diagonala ei numarul de noduri ce se invecineaza direct cu nodul respectiv (la pozitia (i,i) a matricei K,
+se gaseste numarul de noduri cu care se invecineaza nodul i).Calculandu-l pe M ca fiind transpusa produsului dintre inversa lui K si A, si calculand matricea R, M = (K^-1*A)', 
+am implementat recurenta care duce la aflarea rezultatului final. Aplicand formula de recurenta ce contine R(t) din tema.
+si R(t+1),si pentru a implementa, am preferat notarea lor cu R si R_v, vectori ce se schimba la fiecare apelare a secventei repetitive while 1.Vectorul final rezultat, R_v, este rezultatul functiei Iterative.
+
+Task 2
+	Pentru citirea din fisier text, am pastrat aceeasi metoda ca la functia iterative.m .Metoda algebraica foloseste o singura formula, astfel ca nu mai folosim 
+recurenta. Pentru a calcula inversa unei matrici(problema reala a acestui task) am folosit calularea inversei lui R^-1, care se foloseste de algoritmul de factorizare Gram-Schmidt
+si algoritmul de rezolvare a unui sistem de ecuatii triunghiular superior, SST.m.Ambele functii au fost date/explicate la curs si la laborator,astfel ca am explicat 
+efectul lor prin unele comentarii.Am calculat si inversa matricii (I-dM) folosinduma de algoritmul Gram-Schmidt si SST, calculand
+direct in algebraic.m folosind formula T(INVERSA) = R^-1 * Q'.Am notat cu T inversa acestei matrici, dupa care am folosit-o simplu in aplicarea formulei gasita in documentatia din tema(Wikipedia).Dupa care,
+evident, am inchis fisierul deschis initial spre citire.
+
+Task 3-
+
+Task 4
+In acest task, am creat un fisier .out in care scriam rezultatele obtinute in urma functir Iteratie si Algebric, pe prima linia am afisat nr de linii,respctiv in jos am afisat prin spatiu outputurile functiilor, am pus in outpus si R3 ce ar repezenta outputul functiei Power Metod. Am parcurs fisierul cu fgets pana la sfarsit de unde am luat v1 si v2 ce reprezinta valori,am calculat parametrii a si b specifici, din cele doua conditii : a*val1+b=0 si a*val2+b=1.Am duplicat R2 si apoi lam ordonat, scriindul in a 4 sectiune a fisierului out.
+	In PageRank am calculat si afisat ordonat topul Practic, am facut un clasament al celor mai importante pagini,
+clasament in care intereseaza
+ locul obtinut (adica numarul i), numarul paginii care a obtinut acest loc,si
+gradul de apartenenta a acestei pagini la multimea paginilor importante.Functia afiseaza outputul corect pentru taskul 1,2 si 4.
+
+

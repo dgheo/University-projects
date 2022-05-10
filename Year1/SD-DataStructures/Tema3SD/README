@@ -1,0 +1,18 @@
+Gheorghe Digori
+311CC
+
+			Tema 3 SD - STP
+
+	Am implementat rezolvarea pentru cerinta 1 si 2.
+	Programul implementat simuleaza functionalitatea protocolului Spanning Tree Protocol ce
+se ocupa cu eliminarea buclelor din cadrul unei retele. Programul primeste lista de switch-uri din
+retea, legaturile dintre porturile switch-urilor si o serie de task-uri si afiseaza in fisierul de output rezultatele corespunzatoare.
+	Switchurile cu nr, prioritatea si mac-ul sunt pastrate in structura de tip switches, iar
+legaturile (tipul legaturii si porturile) in matricea de adiacenta din structura graph.
+	Pentru a obtine rootbridge-ul am ales switchul cu prioritatea minima. In cazul in care erau mai multe switchuri cu prioritate minima l-am ales pe cel cu mac mai mic.
+	Pentru a afla rootporturile am aflat drumurile cu costuri minime de la rootbridge la fiecare alt nod. Portul corespunzator drumului respectiv este rootport.
+	In cazul designated ports le-am selectat pe cele care au pe legatura un switch cu port root
+port. In cazul in care amandoua erau de tip necunoscut am ales ca designated pe cel cu distanta minima pana la rootbridge. Daca aveau aceeasi distanta alegerea era facuta in functie de bridgeid.
+Porturile de pe legatura cu un designated port au fost selectate ca blockedports.
+Pentru a afla distanta minima am folosit o varianta modifcata a algoritmului Dijkstra in care la
+alegerea nodului cu distanta minima pana la sursa verificam ca in cazul in care erau mai multe distante minime sa fie aleasa cea cu bridgeid-ul minim.

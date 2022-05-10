@@ -1,0 +1,22 @@
+TEMA 1 PROGRAMAREA CALCULATOARELOR
+Codificator de siruri 
+
+Timp de lucru 30 ore(aproximativ)
+
+Programul citeste de la tastatura caractere, cuvinte sau numere, fiecare pe cate o linie, pana la intalnirea cuvantului END si afiseaza la consola mesajul rezultat in urma codificarii. Termenii cititi sunt pastrati intr-un vector de cuvinte dintr-o structura de tip termeni ce mai contine un vector e int ce pastreaza tipul fiecarui termen: -1 pentru carctere 0 pentru cifre si 1 pentru cuvinte. Tipul termenilor este determinat in functia read_and_count unde se numara si cate caractere ,cuvinte,numere sunt. 
+
+Programul codifica termenii in functia codificare in care in functie de tipul termenului este apelata functia ce codifica termenul respectiv. 
+
+Functia care codifica un caracter se numeste codificare caracter si daca mesajul codificat de pana acum este NULL caracterul respectiv este adaugat la mesaj pe prima pozitie, altfel se determina caracterul cu numarul minim de aparitii si caracterul cu numarul maxim de aparitii (cu functiile: get_nr_aparitii - ce determina nr de aparitii al fiecarul caracter din mesajul codificat e pana acum, get_max - determina caracterul cu numarul maxim de aparitii, get_min - determina caracterul cu numarul minim de aparitii) si la mesajul codificat pe ultima pozitie se adauga caracterul cu nr maxim de aparitii apoi caracterul curent apoi caracterul cu numarul minim de aparitii.
+
+Functia care codifica un numar se numeste codificare_numar si in cazul in care  numarul e pozitiv determina caracterul ce reprezinta cifra cea mai mare(sau caracterele) si pozitia/pozitiile acestora si determina numarul cel mai mare care se poate obtine prin rotirea ciclica a numarului. In cazul in care numarul e negativ se determina caracterul ce reprezinta cifra cea mai mica(sau caracterele) si pozitia/pozitiile acestora si determina numarul cel mai mic care se poate obtine prin rotirea ciclica a numarului. Si apoi numarul acesta este scris in mesajul codificat. 
+
+Functia care codifica un cuvant se numeste codificare_cuvant si verifica daca cuvantul contine cifre, determina cel mai mare divizor al lungimii cuvantului - d (cu ajutorul functiei greatest_divisor) si copiaza primele d caractere la sfarsitul cuvantului. In cazul in care cuvantul nu contine cifre restul caracterelor sunt pastrate in aceeasi ordine, altfel ordinea lor este inversata. Cuvantul este adaugat la mesajul codificat.
+
+Impartire mesaj imparte mesajul in n parti egale in cazul in care lungimea mesajului codificat este divizibila cu n, sau n-1 parti egale iar in a n-a parte sunt adaugate restul caracterelor ramase (lungime mesajului codifcat % n). Functia intoarce un vector de structuri de tip mesaj3, structura ce contine o parte a mesajului codificat si complexitatea acestuia.
+
+Complexitatea este determinata in functia complexitate in care pentru fiecare element al vectorului de structuri de tip mesaj3 se calculeaza media aritmetica a codurilor ascii ce compun acea parte a mesajului.
+
+In sortare are loc sortarea vectorului de structuri de tip mesaj3 in ordine descrescatoare in functie de complexitatea calculata anterior, iar daca 2 mesaje au aceeasi complexitate ele sunt sortate lexicografic.
+
+Functia de reasamblare reasambleaza mesajul codificat prin concatenarea bucăților ce ocupă urmatorii indecsi in vector, în aceasta ordine: 0, n - 1, 1, n - 2, 2, n - 3, 3 etc, si intoarce mesajul rezultat.

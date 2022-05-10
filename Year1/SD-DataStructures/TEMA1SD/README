@@ -1,0 +1,25 @@
+Digori Gheorghe 311CC
+
+Local imi trec testele din enuntul temei si alte teste facute de mine.
+Va rog sa-mi rulati tema local.
+
+
+			Tema 1 Structuri de date
+
+
+	Programul implementat creaza o structura ADN formate din 2 liste dublu inlantuite ce contin noduri obisnuite si noduri de tip snod ce delimiteaza buclele ADN-ului si au indicele 0. Programul suporta urmatoarele operatii:
+	ie: insereaza un element la linia bucla si indicele corespuzator.
+	de: sterge un element la linia bucla si indicele corespunzator.
+	ee: editeaza un element la linia bucla si indicele corespunzator.
+	rs: inverseaza ordinea elementelor din ambele linii ale ADN-ului.
+	pl: afiseaza o linie a ADN-ului.
+	pr: afiseaza in ordine invrsa o linIe a ADN-ului.
+	ps: afiseaza comenzile din stiva.
+	un: anuleaza rezultatul ultimei comenzi cu exceptia cazului cand aceasta este pl,pr,un,ps,pv.
+	pv: verifica daca structura ADN e corecte si elementele din cele 2 liste satisfac conditia din enunt, daca numarul de bucle din prima lista e egal cu numarul de bucle din a doua lista si numarul de elemente din fiecare bucla din prima lista e egal cu numarul de elemente din buclele corespondente din a doua lista elementele din cele 2 bucle sa fie corespondente A cu T si C cu G, altfel afiseaza false.
+	ex: elibereaza memoria si termina programul.
+
+
+	Comenzile sunt pastrate pe stiva pentru a putea fi anulate de comanda un. In afara de numele comenzii in structura stivei pastram si linia ,bucla si indicele,valoarea si daca e snod. In cazul in care se efectueaza operatii asupra unui element de tipul snod, bucla si indicele din stiva corespunzatoare comenzii nu vor fi aceleasi ca acele date ca argumente comenzii deoarece de exemplu cand inseram un element snod la urmatoarea parcurgere a listei acesta va fi primul elementul dintr-o bucla nou creata de bucla "bucla in care am inserat anterior+1" si indice 0. Cand stergem un element snod si apelam comanda "un" atunci bucla va fi "bucla din care am sters anterior - 1" si indice "numarul de elemente din bucla anterioara +1". 	
+	
+ 

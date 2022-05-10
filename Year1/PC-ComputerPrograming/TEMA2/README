@@ -1,0 +1,24 @@
+TEMA 2 PROGRAMAREA CALCULATOARELOR
+Jocul 2048
+
+Timp de lucru 70 ore(aproximativ)
+
+Compilare programului se face cu "g++ 2048.c -lncurses"
+Programul primeste de la tastatura comenzi in meniu "1" -Joc nou . Miscarile se relizeaza cu ajutorul urmatoarelor taste "W" -SUS, "S" -JOS, "A"-STANGA, "D"-DREAPTA .
+
+Atunci cand nu mai exista miscari jocul se incheie si se intoarce in meniul principal. Jocul porneste cu scorul resetat.
+
+La realizarea jocului in cod C am folosit urmatoarele functii.
+In structura points avem un vector de coordonate a poziitiilor de start pentru citire si afisare.
+Functia init initializeaza standard screen-ul.
+Functia clean - functie pentru terminarea ncurses.
+Functia gen -genereaza un numar aleatoriu din {2,4}.
+Functia toInt -converteste stringul citit in integer pentru a putea manipula tabla.
+Funtia toString -functie care transforma integer in sir pentru a putea fi afisate.
+Funtia read -functie de citire a stringului de cifre de pe tabla.
+Functiile move_up move_right, move_left, move_down,-pentru mutarea componentelor in sus, dreapta, stanga, jos.
+Funtia draw_board -functie pentru desenarea tablei de joc.
+
+
+
+
